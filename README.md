@@ -49,32 +49,23 @@
 
 ### 구현 내용
 
+
 - DB관련된 DDL 파일 /DDL.txt
 
+
 - API LIST
-|Action| Method| URL|
-|-----|----|----|
-|회원가입| POST| users/signup
-|로그인| POST| users/signin
-|로그아웃| POST| users/signout
-|가계부 작성| POST| books
-|가계부 리스트| GET| books
-|가계부 수정| PATCH| books<int: book_id>
-|가계부 삭제,취소| PATCH| books/toggle_active/<int: book_id>
-|가계부 내역 작성| POST| books/detail/<int: book_id>
-|가계부 내역 리스트| GET| books/detail/<int: book_id>
-|가계부 내역 상세조회| GET| books/detail/<int: book_id><int: detail_id>
-|가계부 내역 수정| PATCH| books/detail/<int: book_id><int: detail_id>
-|가계부 내역 복사| POST| books/detail/copy/<int: book_id><int: detail_id>
-|가계부 내역 삭제,취소| PATCH| books/detail/toggle_active/<int: book_id><int: detail_id>
+
+
 
 - API DOC (![PostMan](https://img.shields.io/badge/postman-%23121011.svg?logo=postman&logoColor=white))
 
    https://documenter.getpostman.com/view/16975087/2s8Z73wq8E
 
+
 - 구현 안된 내용
-   가계부의 특정 세부 내역을 공유할 수 있게 단축 URL을 만들 수 있습니다.
-   (단축 URL은 특정 시간 뒤에 만료되어야 합니다.)
+
+  가계부의 특정 세부 내역을 공유할 수 있게 단축 URL을 만들 수 있습니다.
+  (단축 URL은 특정 시간 뒤에 만료되어야 합니다.)
 
 
 ### 과제를 마무리 하며
