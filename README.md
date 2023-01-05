@@ -54,7 +54,7 @@
 
 
 - API LIST
-
+https://www.notion.so/9bfbdd50281e49c2983ce9e0476f4626#df4d47d8815846df8481dcc2ae605ebe
 
 
 - API DOC (![PostMan](https://img.shields.io/badge/postman-%23121011.svg?logo=postman&logoColor=white))
