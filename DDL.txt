@@ -1,0 +1,40 @@
+CREATE TABLE `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `password` varchar(128) NOT NULL,
+  `last_login` datetime(6) DEFAULT NULL,
+  `created_at` datetime(6) NOT NULL,
+  `updated_at` datetime(6) NOT NULL,
+  `email` varchar(254) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+
+CREATE TABLE `account_detail` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `created_at` datetime(6) NOT NULL,
+  `updated_at` datetime(6) NOT NULL,
+  `price` decimal(9,0) NOT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `is_delete` tinyint(1) NOT NULL,
+  `account_book_id` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `account_detail_account_book_id_f5d63c5a_fk_account_books_id` (`account_book_id`),
+  CONSTRAINT `account_detail_account_book_id_f5d63c5a_fk_account_books_id` FOREIGN KEY (`account_book_id`) REFERENCES `account_books` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+
+CREATE TABLE `account_books` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `created_at` datetime(6) NOT NULL,
+  `updated_at` datetime(6) NOT NULL,
+  `memo` varchar(100) NOT NULL,
+  `budget` decimal(9,0) NOT NULL,
+  `is_delete` tinyint(1) NOT NULL,
+  `user_id` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `account_books_user_id_c3639579_fk_users_id` (`user_id`),
+  CONSTRAINT `account_books_user_id_c3639579_fk_users_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
